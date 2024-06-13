@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     private const string _vertical = "Vertical";
     private const string _lastHorizontal = "LastHorizontal";
     private const string _lastVertical = "LastVertical";
+
+    [Header ("Attack Components")]
+    [SerializeField] private float attackDamage;
+    [SerializeField] private float attackRange;
     
     private void Awake()
     {
@@ -36,5 +41,18 @@ public class PlayerMovement : MonoBehaviour
             dAnim.SetFloat(_lastHorizontal, _movement.x);
             dAnim.SetFloat(_lastVertical, _movement.y);
         }
+
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            StartCoroutine(Attack());
+        }
+    }
+
+    private IEnumerator Attack()
+    {
+        dAnim.SetBool("isAttacking", true);
+        yield return null;
+        dAnim.SetBool("isAttacking", false);
+        yield return null;
     }
 }
