@@ -197,8 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  attackDamage: 0
-  attackRange: 0
 --- !u!114 &7293139006342159895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 3
   attackRange: 0.5
+  attackDistance: 1.5
   attackPoint: {fileID: 210442512530447894}
   enemyLayers:
     serializedVersion: 2

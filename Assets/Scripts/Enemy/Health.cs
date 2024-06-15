@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [Header ("Enemy Health")]
     [SerializeField] private float maxHealth;
     [SerializeField] private float currHealth;
+
+    [Header ("Enemy Flashes")]
+    [SerializeField] private float flashDur;
+    [SerializeField] private int numofFlash;
+
+    [Header ("Item Drops")]
+    [SerializeField] private GameObject[] itemDrops;
+
+    [Header("Enemy Components")]
+    //private Animator sAnim;
+    private SpriteRenderer sSprite;
 
     private void Start()
     {
         currHealth = maxHealth;
+        //sAnim = GetComponent<Animator>();
+        sSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -18,12 +32,38 @@ public class Health : MonoBehaviour
         
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        currHealth -= damage;
-        if(currHealth <= 0)
+        currHealth = Mathf.Clamp(currHealth - damage, 0, maxHealth);
+
+        if(currHealth > 0)
         {
+            StartCoroutine(damageFlash());
+            // enemy hurt
+        }
+        else
+        {
+            ItemDrop();
             Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator damageFlash()
+    {
+        for (int i = 0; i < numofFlash; i++)
+        {
+            sSprite.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(flashDur);
+            sSprite.color = Color.white;
+            yield return new WaitForSeconds(flashDur);
+        } 
+    }
+
+    private void ItemDrop()
+    {
+        for (int i = 0; i < itemDrops.Length; i++)
+        {
+            Instantiate(itemDrops[i], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
     }
 }

@@ -7,6 +7,7 @@ public class PlayerCombat : MonoBehaviour
     [Header ("Attack Components")]
     [SerializeField] private float attackDamage;
     [SerializeField] private float attackRange;
+    //[SerializeField] private float attackDistance;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayers;
 
@@ -23,6 +24,8 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //attackPoint.transform.localPosition = transform.forward;
+
         if(Input.GetKeyDown(KeyCode.X))
         {
             StartCoroutine(Attack());
@@ -32,7 +35,6 @@ public class PlayerCombat : MonoBehaviour
     private IEnumerator Attack()
     {
         dAnim.SetBool("isAttacking", true);
-        
         yield return null;
         dAnim.SetBool("isAttacking", false);
         yield return null;
@@ -42,9 +44,10 @@ public class PlayerCombat : MonoBehaviour
     {
         Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         
+
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Hit" + enemy.name);
+            enemy.GetComponent<Health>().TakeDamage(attackDamage);
         }
     }
 
