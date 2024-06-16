@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5741864392414978514}
   - component: {fileID: 7293139006342159895}
   - component: {fileID: 7321671544837746384}
+  - component: {fileID: 3550527815180281313}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -225,12 +226,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 3
-  attackRange: 0.5
-  attackDistance: 1.5
+  attackRange: 0.26
   attackPoint: {fileID: 210442512530447894}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &3550527815180281313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81125651081573395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf93b36ccee085e439f2e451d5389563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3955865448862969814
 GameObject:
   m_ObjectHideFlags: 0

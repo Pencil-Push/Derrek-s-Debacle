@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Lock_Unlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Set locked door status
+    [SerializeField] private Key.KeyType keyType;
+
+    public Key.KeyType GetKeyType()
     {
-        
+        return keyType;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenDoor()
     {
-        
+        gameObject.SetActive(false);
     }
 }

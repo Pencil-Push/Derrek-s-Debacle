@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyAttacks : MonoBehaviour
 {
+    [Header("Attack Components")]
+    [SerializeField] private float enemyDamage;
+    [SerializeField] private float enemySpeed;
+
     // Start is called before the first frame update
     void Start()
     {
