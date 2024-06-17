@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4274085003497003539}
   - component: {fileID: 853401591198615757}
   - component: {fileID: 7190682394471025090}
+  - component: {fileID: 8495860085799802290}
   m_Layer: 8
   m_Name: Enemy-Run
   m_TagString: Enemy
@@ -210,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDamage: 1
-  enemySpeed: 5
+  enemySpeed: 4
   attackCooldown: 4
   chase: 0
   startingPoint: {fileID: 0}
@@ -241,3 +242,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &8495860085799802290
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924506404670415604}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5f38a03562d9464498c0e0c617c3a0c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

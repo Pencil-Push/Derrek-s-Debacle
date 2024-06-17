@@ -226,7 +226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 3
-  attackRange: 0.7
+  attackRange: 0.75
+  knockDistance: 0
   attackPoint: {fileID: 210442512530447894}
   enemyLayers:
     serializedVersion: 2

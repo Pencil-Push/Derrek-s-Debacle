@@ -16,12 +16,14 @@ public class Health : MonoBehaviour
     [SerializeField] private GameObject[] itemDrops;
 
     [Header("Enemy Components")]
+    private Rigidbody2D sRb;
     //private Animator sAnim;
     private SpriteRenderer sSprite;
 
     private void Start()
     {
         currHealth = maxHealth;
+        sRb = GetComponent<Rigidbody2D>();
         //sAnim = GetComponent<Animator>();
         sSprite = GetComponent<SpriteRenderer>();
     }
