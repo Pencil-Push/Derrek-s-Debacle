@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 784257535767413701}
   - component: {fileID: 1277567571066695492}
   - component: {fileID: 6927458397793702577}
-  - component: {fileID: 7607727553407094166}
   - component: {fileID: 7690797645243418657}
   m_Layer: 0
   m_Name: Key
@@ -148,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -160,19 +159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7607727553407094166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052949407319862367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9354b57f4c771ff43acd5db715fcbdfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropForce: 5
 --- !u!114 &7690797645243418657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca028c24f58b07489146d9d4fdbc858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyType: 0

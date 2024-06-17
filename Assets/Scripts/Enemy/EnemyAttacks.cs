@@ -81,10 +81,13 @@ public class EnemyAttacks : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
-    /*
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
-        col.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
+        if(col.CompareTag("Player"))
+        {
+            col.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);   
+        }
     }
-    */
+    
 }

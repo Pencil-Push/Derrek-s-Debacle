@@ -7,7 +7,7 @@ public class PlayerCombat : MonoBehaviour
     [Header ("Attack Components")]
     [SerializeField] private float attackDamage;
     [SerializeField] private float attackRange;
-    //[SerializeField] private float attackDistance;
+    [SerializeField] private float knockDistance;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayers;
 
@@ -24,7 +24,7 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //attackPoint.transform.localPosition = transform.forward;
+        attackPoint.transform.localPosition = transform.forward;
 
         if(Input.GetKeyDown(KeyCode.X))
         {
@@ -58,5 +58,4 @@ public class PlayerCombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
 }
