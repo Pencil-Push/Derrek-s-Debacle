@@ -11,6 +11,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayers;
 
+    [Header("Upgrade Components")]
+    static public bool canShoot = false;
+
     [Header ("Player Components")]
     private Rigidbody2D rb;
     private Animator dAnim;
@@ -58,4 +61,10 @@ public class PlayerCombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    /*
+    private void Shoot()
+    {
+
+    }
+    */
 }
