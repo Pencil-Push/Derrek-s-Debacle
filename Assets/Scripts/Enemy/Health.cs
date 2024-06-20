@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     [Header ("Enemy Health")]
     [SerializeField] private float maxHealth;
-    [SerializeField] private float currHealth;
+    public float currHealth { get; private set; }
 
     [Header ("Enemy Flashes")]
     [SerializeField] private float flashDur;
@@ -26,12 +26,6 @@ public class Health : MonoBehaviour
         sRb = GetComponent<Rigidbody2D>();
         //sAnim = GetComponent<Animator>();
         sSprite = GetComponent<SpriteRenderer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void TakeDamage(float damage)
