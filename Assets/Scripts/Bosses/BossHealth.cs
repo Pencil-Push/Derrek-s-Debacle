@@ -12,9 +12,6 @@ public class BossHealth : MonoBehaviour
     [SerializeField] private float flashDur;
     [SerializeField] private int numofFlash;
 
-    [Header ("Item Drops")]
-    [SerializeField] private GameObject[] itemDrops;
-
     [Header("Boss Components")]
     private Rigidbody2D bRb;
     private Animator bAnim;

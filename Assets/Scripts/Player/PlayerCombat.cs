@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float knockDistance;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayers;
+    [SerializeField] private LayerMask bossLayers;
 
     [Header("Upgrade Components")]
     static public bool canShoot = false;
@@ -53,7 +54,18 @@ public class PlayerCombat : MonoBehaviour
             enemy.GetComponent<Health>().TakeDamage(attackDamage);
         }
     }
+    /*
+    void BossAttackComponents()
+    {
+        Collider2D [] hitBosses = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, bossLayers);
+        
 
+        foreach(Collider2D boss in hitBosses)
+        {
+            boss.GetComponent<BossHealth>().TakeDamage(attackDamage);
+        }
+    }
+    */
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -61,10 +73,4 @@ public class PlayerCombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    /*
-    private void Shoot()
-    {
-
-    }
-    */
 }
