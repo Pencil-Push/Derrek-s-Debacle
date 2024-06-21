@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [Header ("Enemy Health")]
     [SerializeField] private float maxHealth;
     public float currHealth { get; private set; }
+    private bool dead;
 
     [Header ("Enemy Flashes")]
     [SerializeField] private float flashDur;
@@ -39,8 +40,14 @@ public class Health : MonoBehaviour
         }
         else
         {
-            ItemDrop();
-            Destroy(gameObject);
+            if(!dead)
+            {
+                ItemDrop();
+                Destroy(gameObject);
+
+                if(GetComponent<EnemyAttacks>() != null)
+                    GetComponent<EnemyAttacks>().enabled = false;
+            }
         }
     }
 

@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
-  invulDuration: 1
+  invulDuration: 2
   numofFlashes: 3
 --- !u!114 &7321671544837746384
 MonoBehaviour:
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 3
-  attackRange: 0.75
+  attackRange: 1
   knockDistance: 0
   attackPoint: {fileID: 210442512530447894}
   enemyLayers:

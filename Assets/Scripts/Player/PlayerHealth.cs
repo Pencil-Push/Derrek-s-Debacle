@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header ("Health Component")]
     [SerializeField] private float maxHealth;
     public float currHealth { get; private set; }
+    private bool dead;
 
     [Header ("iFrames")]
     [SerializeField] private float invulDuration;
@@ -44,7 +46,10 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            dAnim.SetTrigger("Die");
+            if(!dead)
+            {
+                StartCoroutine(GameEnd());
+            }
         }
     }
 
@@ -64,5 +69,14 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(invulDuration / (numofFlashes * 2));
         }   
         Physics2D.IgnoreLayerCollision(7, 8, false);
+    }
+
+    private IEnumerator GameEnd()
+    {
+        dAnim.SetTrigger("Die");
+        if(GetComponent<PlayerMovement>() != null)
+            GetComponent<PlayerMovement>().enabled = false;
+        yield return new WaitForSeconds(2.0f);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(2);
     }
 }

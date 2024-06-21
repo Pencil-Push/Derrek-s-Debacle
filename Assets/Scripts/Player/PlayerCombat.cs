@@ -7,10 +7,10 @@ public class PlayerCombat : MonoBehaviour
     [Header ("Attack Components")]
     [SerializeField] private float attackDamage;
     [SerializeField] private float attackRange;
-    [SerializeField] private float knockDistance;
+    //[SerializeField] private float knockDistance;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayers;
-    [SerializeField] private LayerMask bossLayers;
+    //[SerializeField] private LayerMask bossLayers;
 
     [Header("Upgrade Components")]
     static public bool canShoot = false;
