@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
+  hurtAClip: {fileID: 8300000, guid: 66899c22ce72c534d8afb1b9859b56bf, type: 3}
   invulDuration: 2
   numofFlashes: 3
 --- !u!114 &7321671544837746384
@@ -227,11 +228,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 3
   attackRange: 1
-  knockDistance: 0
   attackPoint: {fileID: 210442512530447894}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
+  damageAClip: {fileID: 8300000, guid: d922ea441387697448b15899529e97ba, type: 3}
 --- !u!114 &3550527815180281313
 MonoBehaviour:
   m_ObjectHideFlags: 0

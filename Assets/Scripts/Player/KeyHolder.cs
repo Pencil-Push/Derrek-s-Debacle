@@ -7,6 +7,8 @@ public class KeyHolder : MonoBehaviour
 {
     private List<Key.KeyType> keyList;
     public event EventHandler OnKeysChanged;
+    [SerializeField] private AudioClip getAClip;
+    [SerializeField] private AudioClip unlockAClip;
 
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class KeyHolder : MonoBehaviour
     {
         //Debug.Log("Added Key: " + keyType);
         keyList.Add(keyType);
+        SoundFXManager.instance.PlaySoundFXClip(getAClip, transform, 0.3f);
         OnKeysChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -54,6 +57,7 @@ public class KeyHolder : MonoBehaviour
                 //Currently holding Key to open door
                 RemoveKey(lockUnlock.GetKeyType());
                 lockUnlock.OpenDoor();
+                SoundFXManager.instance.PlaySoundFXClip(unlockAClip, transform, 0.6f);
             }
         }
     }

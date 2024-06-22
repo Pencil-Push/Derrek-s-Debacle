@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayers;
     //[SerializeField] private LayerMask bossLayers;
+    [SerializeField] private AudioClip swingAClip;
 
     [Header("Upgrade Components")]
     static public bool canShoot = false;
@@ -52,20 +53,10 @@ public class PlayerCombat : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Health>().TakeDamage(attackDamage);
+            SoundFXManager.instance.PlaySoundFXClip(swingAClip, transform, 0.4f);
         }
     }
-    /*
-    void BossAttackComponents()
-    {
-        Collider2D [] hitBosses = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, bossLayers);
-        
 
-        foreach(Collider2D boss in hitBosses)
-        {
-            boss.GetComponent<BossHealth>().TakeDamage(attackDamage);
-        }
-    }
-    */
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)

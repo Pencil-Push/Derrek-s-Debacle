@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 9
-  currHealth: 9
+  damageAClip: {fileID: 0}
   flashDur: 0.2
   numofFlash: 1
   itemDrops:

@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float maxHealth;
     public float currHealth { get; private set; }
     private bool dead;
+    [SerializeField] private AudioClip damageAClip;
 
     [Header ("Enemy Flashes")]
     [SerializeField] private float flashDur;
@@ -36,7 +37,7 @@ public class Health : MonoBehaviour
         if(currHealth > 0)
         {
             StartCoroutine(damageFlash());
-            // enemy hurt
+            SoundFXManager.instance.PlaySoundFXClip(damageAClip, transform, 0.1f);
         }
         else
         {

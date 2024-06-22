@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
-  currHealth: 6
+  damageAClip: {fileID: 8300000, guid: d922ea441387697448b15899529e97ba, type: 3}
   flashDur: 0.2
   numofFlash: 1
   itemDrops:

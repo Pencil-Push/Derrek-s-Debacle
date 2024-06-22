@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float maxHealth;
     public float currHealth { get; private set; }
     private bool dead;
+    [SerializeField] private AudioClip hurtAClip;
 
     [Header ("iFrames")]
     [SerializeField] private float invulDuration;
@@ -25,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         dSprite = GetComponent<SpriteRenderer>();
     }
 
-    
+    /*
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -33,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(1);
         }
     }
-    
+    */
 
     public void TakeDamage(float damage)
     {
@@ -42,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
         if (currHealth > 0)
         {
             dAnim.SetTrigger("Hurt");
+            SoundFXManager.instance.PlaySoundFXClip(hurtAClip, transform, 0.4f);
             StartCoroutine(Invulnerability());
         }
         else
