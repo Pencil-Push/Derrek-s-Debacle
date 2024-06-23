@@ -227,12 +227,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 3
-  attackRange: 1
+  attackRange: 1.2
   attackPoint: {fileID: 210442512530447894}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
-  damageAClip: {fileID: 8300000, guid: d922ea441387697448b15899529e97ba, type: 3}
+  swingAClip: {fileID: 0}
 --- !u!114 &3550527815180281313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf93b36ccee085e439f2e451d5389563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getAClip: {fileID: 0}
+  unlockAClip: {fileID: 0}
 --- !u!1 &3955865448862969814
 GameObject:
   m_ObjectHideFlags: 0
